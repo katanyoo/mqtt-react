@@ -1,7 +1,7 @@
 {
-  "name": "mqtt-react",
-  "version": "0.0.2",
-  "description": "Connecting MQQT to React Components",
+  "name": "mqtt-react-native",
+  "version": "0.0.1",
+  "description": "Connecting MQQT to React Components and use TCP to connect mqtt",
   "main": "./lib/index.js",
   "scripts": {
     "build:lib": "NODE_ENV=development babel src --out-dir lib",
@@ -18,7 +18,7 @@
     "react",
     "mqtt"
   ],
-  "author": "Marc Höffl <marc.hoeffl@gmail.com>",
+  "author": "Katanyoo Ubalee <ubalee.k@gmail.com> // Forked from Marc Höffl <marc.hoeffl@gmail.com>",
   "license": "MIT",
   "ava": {
     "files": [
@@ -32,13 +32,17 @@
     ],
     "babel": "inherit"
   },
+  "browser": {
+    "net": "react-native-tcp"
+  },
   "dependencies": {
-    "mqtt": "^2.7.0"
+    "mqtt": "^2.7.0",
+    "react-native-tcp": "^3.3.0"
   },
   "peerDependencies": {
+    "prop-types": "^15.5.8",
     "react": "^15.5.0",
-    "react-dom": "^15.5.0",
-    "prop-types": "^15.5.8"
+    "react-dom": "^15.5.0"
   },
   "devDependencies": {
     "ava": "^0.19.1",
@@ -51,9 +55,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^4.0.0",
     "enzyme": "^2.8.2",
+    "prop-types": "^15.5.8",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
-    "prop-types": "^15.5.8",
     "react-test-renderer": "^15.5.4",
     "sinon": "^2.2.0",
     "webpack": "^2.4.1"
