@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/KeKs0r/mqtt-react.svg?branch=master)](https://travis-ci.org/KeKs0r/mqtt-react)
 
-# mqtt-react
+# mqtt-react-native
 React Container for [mqttjs/MQTT.js](https://github.com/mqttjs/MQTT.js)
-
+modified for React Native 
 <!--
 ### Installation
 ```
-npm i -S mqtt-react
+npm i -S mqtt-react-native
 ```
 -->
 
@@ -14,7 +14,7 @@ npm i -S mqtt-react
 There is a very minimalistic Demo-App: [mqtt-react-demo](https://github.com/KeKs0r/mqtt-react-demo)
 
 ### Usage
-Currently, mqtt-react exports two enhancers.
+Currently, mqtt-react-native exports two enhancers.
 Similarly to react-redux, you'll have to first wrap a root component with a
 ```Connector``` which will initialize the mqtt instance and then subscribe to
 data by using ```subscribe```.
@@ -24,7 +24,7 @@ The only property for the connector is the connection information for [mqtt.Clie
 
 **Example Root component:**
 ```JavaScript
-import { Connector } from 'mqtt-react';
+import { Connector } from 'mqtt-react-native';
 import App from './components/App';
 
 export default () => (
@@ -37,13 +37,13 @@ export default () => (
 #### Subscribe 
 **Example Subscribed component:**
 ```JavaScript
-import { subscribe } from 'mqtt-react';
+import { subscribe } from 'mqtt-react-native';
 
 // Messages are passed on the "data" prop
 const MessageList = (props) => (
-  <ul>
-    {props.data.map( message => <li>{message}</li> )}
-  </ul>
+  <View>
+    {props.data.map( message => <Text>{message}</Text> )}
+  </View>
 );
 
 // simple subscription to messages on the "@test/demo" topic
@@ -60,7 +60,7 @@ MQTT Client is passed on to subscribed component and can be used to publish mess
 
 ```JavaScript
 import React from 'react';
-import { subscribe } from 'mqtt-react';
+import { subscribe } from 'mqtt-react-native';
 
 export class PostMessage extends React.Component {
     
@@ -73,9 +73,9 @@ export class PostMessage extends React.Component {
   
   render() {
     return (
-      <button onClick={this.sendMessage.bind(this)}>
+      <Button onClick={this.sendMessage.bind(this)}>
         Send Message
-      </button>
+      </Button>
     );
   }
 }
@@ -90,7 +90,7 @@ export default subscribe({
 It is possible to provide a function that handles received messages. 
 By default the function adds the message to the data prop, but it can be used to dispatch actions to a redux store.
 ```JavaScript
-import { subscribe } from 'mqtt-react';
+import { subscribe } from 'mqtt-react-react';
 import store from './store';
 
 

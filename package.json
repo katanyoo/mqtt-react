@@ -1,6 +1,6 @@
 {
   "name": "mqtt-react-native",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Connecting MQQT to React Components and use TCP to connect mqtt",
   "main": "./lib/index.js",
   "scripts": {
