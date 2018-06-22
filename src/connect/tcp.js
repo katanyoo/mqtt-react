@@ -1,7 +1,7 @@
 'use strict';
 
-// var net = require('net');
-var net = require('react-native-tcp')
+var net = require('net');
+// var net = require('react-native-tcp')
 
 /*
   variables port and host can be removed since
