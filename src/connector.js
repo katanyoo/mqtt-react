@@ -19,6 +19,7 @@ export default class Connector extends Component {
 
         const initialState = {};
         this.state = initialState;
+
     }
 
     getChildContext() {
@@ -30,6 +31,11 @@ export default class Connector extends Component {
 
     componentWillMount() {
         const { mqttProps, mqtt } = this.props;
+
+        delete MQTT['connect']
+        MQTT.connect = require('./connect')
+        
+        // module.exports = MQTT
 
         this.mqtt = (mqtt) ? mqtt : MQTT.connect(mqttProps);
 
