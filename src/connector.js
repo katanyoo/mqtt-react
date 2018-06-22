@@ -35,7 +35,7 @@ export default class Connector extends Component {
         delete MQTT['connect']
         MQTT.connect = require('./connect')
         
-        // module.exports = MQTT
+        module.exports = MQTT
 
         this.mqtt = (mqtt) ? mqtt : MQTT.connect(mqttProps);
 
