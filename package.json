@@ -1,13 +1,11 @@
 {
   "name": "mqtt-react-native",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Connecting MQQT to React Components and use TCP to connect mqtt",
   "main": "./lib/index.js",
   "scripts": {
     "build:lib": "NODE_ENV=development babel src --out-dir lib",
-    "build:umd": "cross-env NODE_ENV=development webpack --config=webpack.config.js src/index.js dist/mqtt-react-native.js",
-    "build:umd:min": "cross-env NODE_ENV=production webpack --config=webpack.config.js src/index.js dist/mqtt-react-native.min.js",
-    "build": "npm run build:lib && npm run build:umd",
+    "build": "npm run build:lib",
     "test": "cross-env NODE_ENV=test ava"
   },
   "repository": {
@@ -37,7 +35,7 @@
     "react-native-tcp": "^3.3.0"
   },
   "browser": {
-    "net": "react-native-tcp"
+    "net": false
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
@@ -48,6 +46,7 @@
     "ava": "^0.19.1",
     "ava-spec": "^1.1.0",
     "babel-cli": "^6.24.1",
+    "babel-eslint": "8",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
@@ -55,6 +54,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^4.0.0",
     "enzyme": "^2.8.2",
+    "eslint": "4.x",
     "prop-types": "^15.5.8",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",

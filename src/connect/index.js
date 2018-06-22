@@ -9,8 +9,8 @@ var protocols = {}
 process.title = 'mobile'
 
 if (process.title !== 'browser') {
-  protocols.mqtt = require('mqtt/lib/connect/tcp')
-  protocols.tcp = require('mqtt/lib/connect/tcp')
+  protocols.mqtt = require('./tcp')
+  protocols.tcp = require('./tcp')
   protocols.ssl = require('mqtt/lib/connect/tls')
   protocols.tls = require('mqtt/lib/connect/tls')
   protocols.mqtts = require('mqtt/lib/connect/tls')
